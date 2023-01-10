@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/anshee.tres" type="Theme" id=1]
+[ext_resource path="res://Main/Game.gd" type="Script" id=2]
+[ext_resource path="res://Assets/UI/background.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/flower.png" type="Texture" id=4]
+
+[node name="Game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 984.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+
+[node name="Flower" type="TextureRect" parent="."]
+anchor_left = 0.175
+anchor_top = -0.058
+anchor_right = 1.06
+anchor_bottom = 0.968
+margin_left = -0.199982
+margin_top = -0.199989
+margin_right = 3625.56
+margin_bottom = 2464.2
+rect_scale = Vector2( 0.2, 0.2 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 4 )
+
+[node name="PlayBtn" type="Button" parent="."]
+anchor_left = 0.45
+anchor_top = 0.518
+anchor_right = 0.595
+anchor_bottom = 0.635
+margin_left = 0.199982
+margin_top = 0.199982
+margin_right = -0.280029
+margin_bottom = -3.05176e-05
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+text = "Play"
+
+[connection signal="pressed" from="PlayBtn" to="." method="_on_PlayBtn_pressed"]

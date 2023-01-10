@@ -1,0 +1,211 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Assets/level_01/00.png" type="Texture" id=1]
+[ext_resource path="res://Assets/level_01/05.png" type="Texture" id=2]
+[ext_resource path="res://Player/Anshee.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/level_01/01.png" type="Texture" id=4]
+[ext_resource path="res://Objects/Gemstone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/level_01/03.png" type="Texture" id=6]
+[ext_resource path="res://Boss/Mineas.tscn" type="PackedScene" id=7]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 62.0
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 54.6453
+height = 57.082
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 63.0605
+height = 32.3101
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 88.5177, 59.6815 )
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 56.4943
+height = 49.832
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 91.0055
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 86.75, 45.5 )
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 80.5047
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 77.1622
+
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 60.0
+height = 39.7106
+
+[sub_resource type="CapsuleShape2D" id=11]
+radius = 57.0
+height = 62.5897
+
+[sub_resource type="CapsuleShape2D" id=12]
+radius = 67.0
+height = 39.7523
+
+[sub_resource type="CapsuleShape2D" id=13]
+radius = 74.0
+
+[sub_resource type="CircleShape2D" id=14]
+radius = 84.006
+
+[sub_resource type="CapsuleShape2D" id=15]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id=16]
+radius = 74.5453
+
+[node name="Level01" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 17, -678 )
+scale = Vector2( 3, 2 )
+texture = ExtResource( 1 )
+
+[node name="FogLeft" type="Sprite" parent="."]
+position = Vector2( -1754, -619 )
+texture = ExtResource( 6 )
+
+[node name="FogRight" type="Sprite" parent="."]
+position = Vector2( 1764, -628 )
+texture = ExtResource( 6 )
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="Floor2" type="TextureRect" parent="Floor"]
+margin_left = -7.0
+margin_top = -1877.0
+margin_right = 3501.0
+margin_bottom = 603.0
+texture = ExtResource( 2 )
+
+[node name="Floor3" type="TextureRect" parent="Floor"]
+margin_left = -3506.0
+margin_top = -1877.0
+margin_right = 2.0
+margin_bottom = 603.0
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Floor"]
+position = Vector2( -2040.16, 0 )
+scale = Vector2( 1.41505, 1 )
+polygon = PoolVector2Array( 875.886, 339, 1057.79, 391, 1379.78, 420, 1710.83, 391, 2019.57, 335, 2427.29, 381, 2725.58, 420, 2967.42, 348, 3343.07, 275, 3451.8, 229, 3657.4, 44, 3819.78, -198, 3624.73, -1552, 4020.5, -1334, 3975.2, 597, 3819.78, 610, -1064.41, 606, -1343.19, 608, -1321.58, -962, -908.688, -1337, -1061.62, -194, -931.99, -3, -769.601, 168, -650.424, 292, -448.31, 344, -229.469, 358, 55.5819, 415, 191.486, 420, 347.602, 363, 569.928, 353 )
+
+[node name="FloatingStones" type="StaticBody2D" parent="."]
+position = Vector2( 1, 2 )
+
+[node name="Sprite" type="Sprite" parent="FloatingStones"]
+position = Vector2( 10, -791 )
+texture = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FloatingStones"]
+polygon = PoolVector2Array( -663, 150, -599, 146, -538, 124, -500, 97, -450, 96, -426, 122, -441, 161, -485, 175, -521, 163, -536, 185, -577, 185, -587, 178, -610, 194, -652, 192 )
+one_way_collision = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FloatingStones"]
+position = Vector2( -294, 66 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FloatingStones"]
+position = Vector2( -72, -20 )
+rotation = 1.39626
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="FloatingStones"]
+position = Vector2( 127, 26 )
+rotation = 1.58999
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="FloatingStones"]
+position = Vector2( 279, -40 )
+rotation = -4.85202
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="FloatingStones"]
+position = Vector2( 686, -120 )
+rotation = 1.20253
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="FloatingStones"]
+position = Vector2( 834, -288 )
+rotation = -0.326377
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="FloatingStones"]
+position = Vector2( 467, -114 )
+rotation = 1.20253
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="FloatingStones"]
+position = Vector2( 1217, -529 )
+shape = SubResource( 6 )
+one_way_collision = true
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="FloatingStones"]
+position = Vector2( 1170.25, -746 )
+shape = SubResource( 7 )
+one_way_collision = true
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="FloatingStones"]
+position = Vector2( 1066, -908 )
+shape = SubResource( 8 )
+one_way_collision = true
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="FloatingStones"]
+position = Vector2( 918, -1106 )
+shape = SubResource( 9 )
+one_way_collision = true
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="FloatingStones"]
+position = Vector2( 770, -1288 )
+rotation = 1.53065
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="FloatingStones"]
+position = Vector2( 582, -1500 )
+rotation = 1.63886
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="FloatingStones"]
+position = Vector2( 374, -1403 )
+rotation = 1.20253
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="FloatingStones"]
+position = Vector2( 195, -1221 )
+rotation = 1.4207
+shape = SubResource( 13 )
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="FloatingStones"]
+position = Vector2( 10, -1019 )
+shape = SubResource( 14 )
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="FloatingStones"]
+position = Vector2( -192, -844 )
+rotation = 1.4207
+shape = SubResource( 15 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="FloatingStones"]
+position = Vector2( 1046, -394 )
+shape = SubResource( 16 )
+
+[node name="Anshee" parent="." instance=ExtResource( 3 )]
+position = Vector2( -2310, 208 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Mineas" parent="." instance=ExtResource( 7 )]
+position = Vector2( -719, 189 )
+
+[node name="Gemstone" parent="." instance=ExtResource( 5 )]
+position = Vector2( 494, -751 )
+scale = Vector2( 0.5, 0.5 )
